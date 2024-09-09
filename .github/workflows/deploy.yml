@@ -1,0 +1,36 @@
+name: YASSINECR7
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run build
+        run: npm run build
+
+      - name: YASSINECR7
+        uses: easingthemes/ssh-deploy@v2.0.7
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.1A12Z1E1R1R }}
+          ARGS: "-rltgoDzvO --delete"
+        with:
+          remote_host: ${{ secrets.123.45.67.89 }}
+          remote_user: ${{ secrets.YASSINECR7X1 }}
+          target: ${{ secrets./var/www/html/myproject. }}
+          source: "public/"
